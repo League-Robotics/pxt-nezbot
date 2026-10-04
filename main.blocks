@@ -1,0 +1,7 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="pxt-on-start" x="0" y="0">
+    <statement name="HANDLER">
+      <block type="calibrate_registerPrograms"></block>
+    </statement>
+  </block>
+</xml>

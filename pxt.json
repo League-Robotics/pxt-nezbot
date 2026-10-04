@@ -13,12 +13,14 @@
     },
     "files": [
         "README.md",
-        "src/main.ts"
+        "main.blocks",
+        "main.ts"
     ],
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "tsprj",
+    "preferredEditor": "blocksprj",
+    "languageRestriction": "no-python",
     "yotta": {
         "config": {
             "microbit_radio_max_packet_size": 250,
