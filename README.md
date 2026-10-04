@@ -19,7 +19,7 @@ robot drives straight, turns, and knows where it is.
 Go to [makecode.microbit.org](https://makecode.microbit.org/),
 click **Import**, and paste this repo's URL:
 
-> https://github.com/League-Robotics/nezha-robot-template
+> https://github.com/League-Robotics/pxt-nezbot
 
 ### 2. Write your program
 

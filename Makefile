@@ -1,4 +1,4 @@
-# nezha-robot-template — Makefile
+# pxt-nezbot — Makefile
 #
 # Thin wrapper over the npm scripts in package.json, which in turn call
 # the shell scripts in scripts/. `make X` and `npm run X` do the same thing;

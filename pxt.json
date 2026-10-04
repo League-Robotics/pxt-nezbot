@@ -1,5 +1,5 @@
 {
-    "name": "nezha-robot-template",
+    "name": "pxt-nezbot",
     "version": "1.0.0",
     "description": "MakeCode project template for driving the Nezha robot with the DiffDrive extension. Start here to write JavaScript programs that move, turn, and navigate.",
     "license": "MIT",

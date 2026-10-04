@@ -105,7 +105,7 @@ jobs:
           PROFILE="calibration-${TAG#v}"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "profile=$PROFILE" >> "$GITHUB_OUTPUT"
-          echo "hex=nezha-robot-template-$TAG.hex" >> "$GITHUB_OUTPUT"
+          echo "hex=pxt-nezbot-$TAG.hex" >> "$GITHUB_OUTPUT"
           echo "Building $TAG as profile $PROFILE"
 
       - name: Build
@@ -132,7 +132,7 @@ jobs:
       # Every release carries the SAME image under two names, plus a
       # manifest:
       #
-      #   nezha-robot-template-<TAG>.hex  the name the release notes tell a
+      #   pxt-nezbot-<TAG>.hex  the name the release notes tell a
       #                                   student to download and drag onto
       #                                   the MICROBIT drive -- self-describing
       #                                   once it is sitting in ~/Downloads
