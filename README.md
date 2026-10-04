@@ -23,8 +23,8 @@ click **Import**, and paste this repo's URL:
 
 ### 2. Write your program
 
-Open `main.ts` and start typing. The DiffDrive blocks appear
-under the **DiffDrive** category. Everything is in centimeters,
+Open `main.ts` and start typing. The robot blocks appear
+under the **Nezbot** category. Everything is in centimeters,
 centimeters per second, degrees, and degrees per second.
 
 ```typescript
