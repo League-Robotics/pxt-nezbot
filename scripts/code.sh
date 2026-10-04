@@ -70,6 +70,9 @@ if [ ! -e targetconfig.json ] && [ -f node_modules/pxt-microbit/targetconfig.jso
     ln -sfn node_modules/pxt-microbit/targetconfig.json targetconfig.json
 fi
 
+# New projects made in the editor start with this repo's extensions.
+node scripts/new-project-template.mjs
+
 # _history is MakeCode's undo-history scratch file. Delete a stale one at
 # startup, because a stale one silently BRICKS SAVING for the whole project:
 # the server's save path (pxt-core server.js) compares every file's on-disk

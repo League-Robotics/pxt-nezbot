@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "scripts": {
-        "setup": "npm install --no-audit --no-fund && npx --yes pxt target microbit && npx --yes pxt install",
+        "setup": "npm install --no-audit --no-fund && npx --yes pxt target microbit && npx --yes pxt install && node scripts/new-project-template.mjs",
         "build": "bash scripts/build.sh",
         "build:cloud": "bash scripts/build.sh --cloud",
         "deploy": "bash scripts/deploy.sh",
