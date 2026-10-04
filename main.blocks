@@ -1,7 +1,1 @@
-<xml xmlns="https://developers.google.com/blockly/xml">
-  <block type="pxt-on-start" x="0" y="0">
-    <statement name="HANDLER">
-      <block type="calibrate_registerPrograms"></block>
-    </statement>
-  </block>
-</xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="Vf+7o^lPPH,$=umPJZDW">robot_name</variable></variables><block type="pxt-on-start" x="20" y="20"><statement name="HANDLER"><block type="variables_set"><field name="VAR" id="Vf+7o^lPPH,$=umPJZDW">robot_name</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="text"><field name="TEXT">gopiv</field></block></value><next><block type="diffDrive_setupRobot"><next><block type="diffDrive_setupRadioForName"><value name="name"><shadow type="text"><field name="TEXT">"gopiv"</field></shadow><block type="variables_get"><field name="VAR" id="Vf+7o^lPPH,$=umPJZDW">robot_name</field></block></value></block></next></block></next></block></statement></block></xml>

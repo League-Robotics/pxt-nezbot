@@ -1,2 +1,3 @@
-// A picks a program, B runs it, any button stops it.
-calibrate.registerPrograms()
+let robot_name = "gopiv"
+diffDrive.setupRobot()
+diffDrive.setupRadioForName(robot_name)
