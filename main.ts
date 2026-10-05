@@ -1,3 +1,6 @@
-let robot_name = "gopiv"
-diffDrive.setupRobot()
+let robot_name = control.deviceName()
 diffDrive.setupRadioForName(robot_name)
+diffDrive.setupWifiForName(robot_name)
+diffDrive.setupRobot()
+calibrate.setupCalibrations()
+// calibrate.setupButtons()

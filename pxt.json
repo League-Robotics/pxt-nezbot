@@ -5,8 +5,8 @@
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "nezha-diffdrive": "github:League-Robotics/pxt-nezha-diffdrive#v1.20261004.4",
-        "nezbot-calibrate": "github:League-Robotics/pxt-nezbot-calibrate#v0.20261004.5",
+        "nezha-diffdrive": "github:League-Robotics/pxt-nezha-diffdrive#v1.20261004.5",
+        "nezbot-calibrate": "github:League-Robotics/pxt-nezbot-calibrate#v0.20261004.6",
         "pxt-PlanetX": "github:elecfreaks/pxt-PlanetX#v1.6.7",
         "microphone": "*",
         "settings": "*"
