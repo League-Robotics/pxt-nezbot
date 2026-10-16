@@ -5,21 +5,22 @@
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "nezha-diffdrive": "github:League-Robotics/pxt-nezha-diffdrive#v1.20261005.1",
-        "nezbot-calibrate": "github:League-Robotics/pxt-nezbot-calibrate#v0.20261005.1",
+        "nezha-diffdrive": "github:League-Robotics/pxt-nezha-diffdrive#v1.20261006.1",
+        "nezbot-calibrate": "github:League-Robotics/pxt-nezbot-calibrate#v0.20261006.1",
         "pxt-PlanetX": "github:elecfreaks/pxt-PlanetX#v1.6.7",
         "microphone": "*",
         "settings": "*"
     },
     "files": [
         "README.md",
-        "main.blocks",
-        "main.ts"
+        "src/main.blocks",
+        "src/linefollower.ts",
+        "src/main.ts"
     ],
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj",
+    "preferredEditor": "tsprj",
     "languageRestriction": "no-python",
     "yotta": {
         "config": {

@@ -12,10 +12,11 @@ SHELL := /bin/bash
 # MICROBIT has no default here: unset, scripts/deploy.sh finds the drive by its
 # label, which is what makes `make deploy` work on Linux as well as macOS.
 PORT     ?= 3232
+MBTOOLS  ?= /Volumes/Proj/proj/robot-projects/mbtools
 
 export PORT
 
-.PHONY: setup build build-cloud deploy deploy-cloud flash code update clean docker-pull help
+.PHONY: setup build build-cloud deploy deploy-cloud flash robot code update clean docker-pull help
 
 ## setup — install Node deps, pxt-microbit target, and extension deps
 setup:
@@ -45,6 +46,11 @@ deploy-cloud:
 ## flash — copy a previously-built hex to micro:bit
 flash:
 	npm run flash
+
+## robot — build for a fleet robot, take its serial lock from the console if needed, and flash it through mbdeploy: make robot ROBOT=gopiv
+robot:
+	@test -n "$(ROBOT)" || { echo "usage: make robot ROBOT=<name>" >&2; exit 1; }
+	MBTOOLS=$(MBTOOLS) bash scripts/robot.sh $(ROBOT)
 
 ## code — start local MakeCode editor (http://localhost:3232)
 code:
