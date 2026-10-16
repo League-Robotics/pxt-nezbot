@@ -6,7 +6,7 @@
     "dependencies": {
         "core": "*",
         "nezha-diffdrive": "github:League-Robotics/pxt-nezha-diffdrive#v1.20261006.1",
-        "nezbot-calibrate": "github:League-Robotics/pxt-nezbot-calibrate#v0.20261006.1",
+        "nezbot-calibrate": "github:League-Robotics/pxt-nezbot-calibrate#v0.20261016.1",
         "pxt-PlanetX": "github:elecfreaks/pxt-PlanetX#v1.6.7",
         "microphone": "*",
         "settings": "*"
