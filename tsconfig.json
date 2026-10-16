@@ -1,44 +1,37 @@
-// tsconfig.json — TypeScript configuration for VS Code IntelliSense.
+// tsconfig.json — VS Code IntelliSense only. PXT has its own build pipeline
+// and nothing here affects what is compiled onto the micro:bit.
 //
-// PXT has its own build pipeline; this file is for EDITOR TOOLING ONLY.
-// Nothing here affects what gets compiled onto the micro:bit.
+// Types come from the real extension sources under pxt_modules/, so
+// IntelliSense tracks whatever extensions pxt.json installs. pxt-globals.d.ts
+// is a pre-setup fallback only; add extensions to pxt.json, not to it.
 //
-// Types come from the REAL extension sources under pxt_modules/, not from
-// a hand-written stub. That matters: the previous setup used a
-// hand-maintained pxt-globals.d.ts, which only knew the handful of APIs
-// somebody had typed out by hand — so `PlanetX_Basic`, `diffDrive.emitLine`,
-// `control.raiseEvent`, `EventBusSource` and friends all showed as errors
-// even though they compile and run fine. Pointing at pxt_modules means
-// IntelliSense tracks whatever extensions are actually installed, and
-// `make update` / adding an extension refreshes the types for free.
+// "noLib": PXT compiles against its own declarations (pxt_modules/core/
+// pxt-core.d.ts), not the browser/ES standard library. Loading a standard
+// "lib" declares `var Math`, which collides with PXT's `namespace Math` and
+// hides Math.constrain, Math.map and friends. pxt-iter.d.ts supplies the
+// iterator protocol that for...of needs without a standard lib.
 //
-// pxt-globals.d.ts is kept ONLY as a pre-setup fallback, so a fresh clone
-// has some IntelliSense before `npm run setup` populates pxt_modules/.
-// It is a strict subset and is NOT the source of truth — verified to merge
-// with the real declarations without conflict. Do not extend it; add the
-// extension to pxt.json instead and the types arrive on their own.
+// "strict": false because TypeScript 6 defaults it on and PXT's sources
+// are not strict-clean.
 //
-// "target" must stay at es2017 or lower. `pxt serve` reads this file with
-// PXT's own bundled (old) TypeScript during its simshim step, and anything
-// newer fails the whole server startup with:
-//   error TS6046: Argument for '--target' option must be: 'es3', 'es5',
-//   'es6', 'es2015', 'es2016', 'es2017', 'esnext'.
+// "module": commonjs rather than none, which TypeScript 6 deprecates; the
+// files have no imports, so they stay global scripts.
 //
-// "lib" is explicit because PXT's dialect uses `for...of` over arrays in
-// its own sources; without es2017's iterable declarations those library
-// files report "must have a '[Symbol.iterator]()' method" and fill the
-// Problems panel with noise from code we do not own.
+// "target" stays at es2017 or lower: PXT's bundled TypeScript rejects
+// newer values (TS6046).
 {
   "compilerOptions": {
     "target": "es2017",
-    "lib": ["es2017"],
-    "module": "none",
+    "noLib": true,
+    "strict": false,
+    "module": "commonjs",
     "noEmit": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
     "types": []
   },
   "include": [
+    "pxt-iter.d.ts",
     "pxt-globals.d.ts",
     "src/*.ts",
     "pxt_modules/*/src/*.ts",
