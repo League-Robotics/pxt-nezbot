@@ -1,20 +1,17 @@
 diffDrive.setupRobot()
+
+// Comunication configuration
 diffDrive.setupRadioForName(control.deviceName())
-diffDrive.setupWifi("Robot_Garage", "code4life2006")
+diffDrive.setupWifi("Robot_Garage", "****")
 diffDrive.setupWifiForName(control.deviceName())
+
+// Robot Calibration
+diffDrive.setWheelCalibration(89.88 * Math.PI / 360)  // wheel diameter 89.88 mm
+diffDrive.setTrackWidth(11.45)  // measured track width, cm
+diffDrive.setConfigValue(ConfigField.RotationalSlip, .95)  
 calibrate.setupCalibrations()
-diffDrive.addRunProgram("follow", lineFollower.follow)
-diffDrive.runSignature("follow", "()")
-diffDrive.addRunProgram("followpid", lineFollower.runFollowPID)
-diffDrive.runSignature("followpid", "(kp:number=0, ki:number=0, kd:number=0, speed:number=0)")
-diffDrive.addRunProgram("pidlog", lineFollower.sendLog)
-diffDrive.runSignature("pidlog", "()")
-diffDrive.addRunProgram("sense", lineFollower.sense)
-diffDrive.runSignature("sense", "()")
-diffDrive.addRunProgram("spinleft", lineFollower.spinLeft)
-diffDrive.runSignature("spinleft", "()")
-diffDrive.addRunProgram("spinright", lineFollower.spinRight)
-diffDrive.runSignature("spinright", "()")
+lineFollower.register()
+tours.register()
 
 // A runs the PID follower with the default gains, B stops it.
 input.onButtonPressed(Button.A, function () { lineFollower.followPID(0, 0, 0, 0) })

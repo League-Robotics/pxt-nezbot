@@ -15,6 +15,7 @@
         "README.md",
         "src/main.blocks",
         "src/linefollower.ts",
+        "src/tours.ts",
         "src/main.ts"
     ],
     "supportedTargets": [

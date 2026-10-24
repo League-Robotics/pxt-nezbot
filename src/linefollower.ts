@@ -54,19 +54,6 @@ namespace lineFollower {
         diffDrive.emitLine("sense " + calibrate.barText(bits) + " bias " + biasOf(bits))
     }
 
-    // Turn in place for two seconds, to check driveTwist's turning.
-    function spin(yawRate: number): void {
-        const start = control.millis()
-        diffDrive.driveTwist(5, yawRate)
-        while (diffDrive.driveTick()) {
-            if (diffDrive.cancelled() || control.millis() - start > 2000) break
-        }
-        diffDrive.stop()
-    }
-
-    export function spinLeft(): void { spin(90) }
-    export function spinRight(): void { spin(-90) }
-
     const SPEED = 20          // cm/s
     const STEER = 8            // deg/s of turn for each mm of bias
     const FINISH_AFTER = 200   // cm travelled before looking for the finish
@@ -207,5 +194,16 @@ namespace lineFollower {
         const kd = diffDrive.runArg(2)
         const speed = diffDrive.runArg(3)
         control.inBackground(function () { followPID(kp, ki, kd, speed) })
+    }
+
+    export function register(): void {
+        diffDrive.addRunProgram("follow", follow)
+        diffDrive.runSignature("follow", "()")
+        diffDrive.addRunProgram("followpid", runFollowPID)
+        diffDrive.runSignature("followpid", "(kp:number=0, ki:number=0, kd:number=0, speed:number=0)")
+        diffDrive.addRunProgram("pidlog", sendLog)
+        diffDrive.runSignature("pidlog", "()")
+        diffDrive.addRunProgram("sense", sense)
+        diffDrive.runSignature("sense", "()")
     }
 }
