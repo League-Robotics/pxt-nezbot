@@ -5,10 +5,6 @@ diffDrive.setupRadioForName(control.deviceName())
 diffDrive.setupWifi("Robot_Garage", "****")
 diffDrive.setupWifiForName(control.deviceName())
 
-// Robot Calibration
-diffDrive.setWheelCalibration(89.88 * Math.PI / 360)  // wheel diameter 89.88 mm
-diffDrive.setTrackWidth(11.45)  // measured track width, cm
-diffDrive.setConfigValue(ConfigField.RotationalSlip, .95)  
 calibrate.setupCalibrations()
 lineFollower.register()
 tours.register()

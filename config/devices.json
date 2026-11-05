@@ -54,5 +54,15 @@
     "enum": 1,
     "port": "/dev/cu.usbmodem2121102",
     "uid": "9906360200052820e9d16c3809a44554000000006e052820"
+  },
+  "99063602000528207d15097fdee74482000000006e052820": {
+    "announcement": "device NEZHA2 robot zuvat 2708918799",
+    "board_name": "zuvat",
+    "common_name": "robot",
+    "device_id": 2708918799,
+    "device_name": "zuvat",
+    "role": "NEZHA2",
+    "serial": "2708918799",
+    "uid": "99063602000528207d15097fdee74482000000006e052820"
   }
 }
