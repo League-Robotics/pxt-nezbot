@@ -1,7 +1,6 @@
 diffDrive.setupRobot()
 
 // Comunication configuration
-diffDrive.setupRadioForName(control.deviceName())
 diffDrive.setupWifi("Robot_Garage", "****")
 diffDrive.setupWifiForName(control.deviceName())
 
